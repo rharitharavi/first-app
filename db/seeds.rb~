@@ -1,0 +1,42 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+Product.delete_all
+Product.create!(title: 'Programming Ruby 1.9 & 2.0',
+  description:
+    %{<p>
+        Ruby is the fastest growing and most exciting dynamic language
+        out there. If you need to get working programs delivered fast,
+        you should add Ruby to your toolbox.
+      </p>},
+  image_url: 'ruby.jpg',
+  price: 49.95)
+
+Product.create!(title: 'Universal 29120 Roller Ball Stick Liquid Pen, Black Ink ,dozen pens',
+  description:
+    %{<p>
+        Metal, needle point tip provides smooth, scratch-free writing. Smooth-flowing liquid ink ensures easy writing. Transparent grip shows when you are running low on ink. sold as one dozen
+      </p>},
+  image_url: 'pen.jpg',
+  price: 11.10)
+
+Product.create!(title: 'Samsung Galaxy Tab 3 (10.1-Inch, White)',
+  description:
+    %{<p>
+        
+
+    Android 4.2 Jelly Bean OS, 1.6 GHz Intel Atom Z2560 Processor
+    16 GB Flash Memory, 1 GB RAM Memory
+    Store photos, videos, music, and more with up to 64GB of memory available through a microSD slot and 50GB of free Dropbox storage
+    Camera: 3MP rear-facing, 1.3MP front-facing
+    Pre-loaded with free content including Hulu Plus membership, Google Play credit and Boingo Wi-Fi Access
+
+
+      </p>},
+  image_url: 'pen.jpg',
+  price: 11.10)
+
