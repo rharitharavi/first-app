@@ -11,8 +11,6 @@
 <%= sanitize(product.description) %>
 <div class="price_line">
 <span class="price"><%= product.price %></span>
-<br/>
-<br/>
 </div>
 </div>
 <% end %> 
