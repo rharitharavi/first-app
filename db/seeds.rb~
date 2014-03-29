@@ -37,6 +37,6 @@ Product.create!(title: 'Samsung Galaxy Tab 3 (10.1-Inch, White)',
 
 
       </p>},
-  image_url: 'pen.jpg',
-  price: 11.10)
+  image_url: 'tab.jpg',
+  price: 323.97)
 

@@ -7,4 +7,13 @@ development:
   password: rharitha
   socket: /var/run/mysqld/mysqld.sock
 
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: products_test
+  pool: 5
+  username: root
+  password: rharitha
+  socket: /var/run/mysqld/mysqld.sock
+
 
