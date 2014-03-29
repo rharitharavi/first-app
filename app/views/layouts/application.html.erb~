@@ -1,10 +1,11 @@
+<!-- START:head -->
 <!DOCTYPE html>
 <html>
 <head>
 <!-- START_HIGHLIGHT -->
   <title>Pragprog Books Online Store</title>
 <!-- END_HIGHLIGHT -->
-  <!-- <label id="code.slt"/> --><%= stylesheet_link_tag "application", media: "all",
+  <!-- <label id="code.slt"/> --><%= stylesheet_link_tag    "application", media: "all",
     "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %><!-- <label id="code.jlt"/> -->
   <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
@@ -26,3 +27,12 @@
       </ul>
     </div>
     <div id="main">
+<!-- END_HIGHLIGHT -->
+      <%= yield %><!-- <label id="code.depot.e.include"/> -->
+<!-- START_HIGHLIGHT -->
+    </div>
+  </div>
+<!-- END_HIGHLIGHT -->
+</body>
+</html>
+
