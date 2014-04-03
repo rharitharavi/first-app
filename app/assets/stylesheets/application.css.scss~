@@ -10,9 +10,8 @@
  *
  *= require_self
  *= require_tree .
- */
-#banner {
-  background: FF9933;
+ */#banner {
+  background: #9c9;
   padding: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
@@ -42,16 +41,40 @@
     background: white;
   }
 
+//#START:side
   #side {
     float: left;
     padding: 1em 2em;
     width: 13em;
-    background: #3FF;
+    background: #141;
 
+/* START_HIGHLIGHT */
+    form, div {
+      display: inline;
+    }  
+ 
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color:     white;
+
+      table {
+        border-top:    1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+
+/* END_HIGHLIGHT */
     ul {
       padding: 0;
+
       li {
         list-style: none;
+
         a {
           color: #bfb;
           font-size: small;
@@ -59,7 +82,6 @@
       }
     }
   }
+//#END:side
 }
-
-
 
