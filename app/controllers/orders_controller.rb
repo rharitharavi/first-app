@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-include CurrentCart
+  skip_before_action :authorize, only: [:new, :create]
+  include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
@@ -24,7 +25,6 @@ include CurrentCart
     @order = Order.new
   end
 
-
   # GET /orders/1/edit
   def edit
   end
@@ -39,12 +39,11 @@ include CurrentCart
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-		
+        OrderNotifier.received(@order).deliver
         format.html { redirect_to store_url, notice: 
-          'Thank you for your order.' }
+          I18n.t('.thanks') }
         format.json { render action: 'show', status: :created,
           location: @order }
-		  
       else
         format.html { render action: 'new' }
         format.json { render json: @order.errors,
@@ -87,4 +86,6 @@ include CurrentCart
     def order_params
       params.require(:order).permit(:name, :address, :email, :pay_type)
     end
+  #...
 end
+

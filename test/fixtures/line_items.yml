@@ -2,12 +2,12 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  product: ruby
+product: ruby
 #START_HIGHLIGHT
-  order: one
+order: one
 #END_HIGHLIGHT
 
 two:
-  product: ruby
-  cart: one
+product: ruby
+cart: one
 

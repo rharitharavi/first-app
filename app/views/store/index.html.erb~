@@ -1,20 +1,25 @@
-
+<% if notice %>
 <p id="notice"><%= notice %></p>
-<h1>Your Pragmatic Catalog</h1>
+<% end %>
+<!-- START_HIGHLIGHT -->
+<h1><%= t('.title_html') %></h1>
+<!-- END_HIGHLIGHT -->
 <% cache ['store', Product.latest] do %>
-<% @products.each do |product| %>
-<% cache ['entry', product] do %>
-<div class = "entry">
-<h3><%= product.title %></h3>
-<%= image_tag(product.image_url) %>
-<%= sanitize(product.description) %>
-<div class="price_line">
-<span class="price">Cost : <%= number_to_currency(product.price) %></span>
-<%= button_to 'Add to Cart', line_items_path(product_id: product),remote: true %>
-<br/>
-<br/>
-</div>
-</div>
-<% end %> 
-<% end %> 
-<% end %> 
+  <% @products.each do |product| %>
+    <% cache ['entry', product] do %>
+      <div class="entry">
+        <%= image_tag(product.image_url) %>
+        <h3><%= product.title %></h3>
+        <%= sanitize(product.description) %>
+        <div class="price_line">
+          <span class="price"><%= number_to_currency(product.price) %></span>
+<!-- START_HIGHLIGHT -->
+          <%= button_to t('.add_html'), line_items_path(product_id: product),
+# END_HIGHLIGHT
+            remote: true %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
