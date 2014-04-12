@@ -46,4 +46,5 @@ end
 
 gem 'therubyracer'
 gem 'jquery-ui-rails'
+gem 'rails_12factor'
 
